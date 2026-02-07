@@ -1,5 +1,5 @@
 # Netflix_Case_Study: Analysis and Recommendation System Case Study
-This was the first project done, but layers had been added  through out as my learning journey in data science from simple analyst data cleaning to using machine learning to nlp for better optimization.
+This was the first project done, but layers had been added  throughout as my learning journey in data science has progressed from simple analyst data cleaning to using machine learning and nlp for better optimization.
 
 [The Project Link] (https://colab.research.google.com/drive/1dlJZDX7UVk7DAeqwDob_y9BjcSWl5QBc)
 
