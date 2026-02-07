@@ -55,7 +55,7 @@ The objectives of this project are:
   - reframed with the title to know the relevance 
   - and then stacked
   - reframed the index 
-  - renamed and dropped level 1 
+  - renamed and dropped level 1 column 
 - Handled missing values in key columns:
   - `director`
   - `cast`
