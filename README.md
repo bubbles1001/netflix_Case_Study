@@ -1,4 +1,4 @@
-#  Netflix Case Study: Analysis & Recommendation System
+#  Amazon Prime Video Case Study: Analysis & Recommendation System
 
 This project began as a foundational data analysis exercise. It gradually evolved into a layered analytics and machine learning case study as my learning journey in data science progressed—from data cleaning and exploratory analysis to recommendation system design using NLP techniques.
 
@@ -9,7 +9,7 @@ This project began as a foundational data analysis exercise. It gradually evolve
 
 ##  Project Overview
 
-This case study analyzes Netflix’s content dataset to extract business insights and design a hybrid recommendation system.  
+This case study analyzes Amazon Prime Video’s content dataset to extract business insights and design a hybrid recommendation system.  
 The workflow mirrors a real-world analytics + ML pipeline, covering:
 
 - Data cleaning and preprocessing  
@@ -27,11 +27,11 @@ The project demonstrates the ability to:
 
 ##  Problem Statement
 
-Netflix hosts a large and diverse catalog of movies and TV shows across countries, genres, and time periods.
+Amazon Prime Video hosts a large and diverse catalog of movies and TV shows across countries, genres, and time periods.
 
 The objectives of this project are:
 - To analyze content trends and patterns on the platform  
-- To understand how Netflix’s catalog has evolved over time  
+- To understand how Amazon Prime Video’s catalog has evolved over time  
 - To extract insights that could inform content strategy  
 - To design a recommendation system that accounts for real-world constraints such as cold start and scalability  
 
@@ -81,7 +81,7 @@ This was one of the most challenging phases of the project.
 
 Key analyses included:
 - Distribution of Movies vs TV Shows  
-- Growth of Netflix content over time  
+- Growth of Amazon Prime Video content over time  
 - Country-wise content trends  
 - Genre-wise content trends  
 - Analysis of:
@@ -89,7 +89,7 @@ Key analyses included:
   - Content duration  
 - Identification of dominant genres and release patterns  
 
-These insights reveal **platform-level trends** and provide signals relevant to Netflix’s **content strategy**.
+These insights reveal **platform-level trends** and provide signals relevant to Amazon Prime Video’s **content strategy**.
 
 ---
 
@@ -97,7 +97,7 @@ These insights reveal **platform-level trends** and provide signals relevant to 
 
 The dataset was explored using SQL-style logic to answer business-driven questions such as:
 
-- Which genres dominate Netflix’s catalog?
+- Which genres dominate Amazon Prime Video’s catalog?
 - How has content addition changed year over year?
 - How does content distribution vary across regions?
 - How do ratings and duration differ by content type?
@@ -135,7 +135,7 @@ A **multi-layer recommendation system** was designed to reflect real-world const
 
 ##  Key Takeaways
 
-- Netflix’s content strategy shows strong temporal, regional, and genre-driven patterns
+- Amazon Prime Video’s content strategy shows strong temporal, regional, and genre-driven patterns
 - Data cleaning and feature preservation are critical for reliable insights
 - Latent semantic modeling improves recommendation quality beyond keyword overlap
 - Hybrid recommendation systems outperform single-method approaches in practice
