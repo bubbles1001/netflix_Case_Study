@@ -1,169 +1,98 @@
-#  Amazon Prime Video Case Study: Analysis & Recommendation System
+# Netflix Data Analysis
 
-This project began as a foundational data analysis exercise. It gradually evolved into a layered analytics and machine learning case study as my learning journey in data science progressed—from data cleaning and exploratory analysis to recommendation system design using NLP techniques.
-
-**Project Notebook:**  
-[the project link ](https://colab.research.google.com/drive/1dlJZDX7UVk7DAeqwDob_y9BjcSWl5QBc)
+## Project Overview
+This project conducts an exploratory data analysis (EDA) on Netflix content data to understand patterns in content availability, production trends, and platform composition. The analysis combines data cleaning, feature engineering, and visualization to derive insights that inform data-driven recommendations.
 
 ---
 
-##  Project Overview
+## Dataset Description
+The dataset contains metadata related to titles available on Netflix, including:
 
-This case study analyzes Amazon Prime Video’s content dataset to extract business insights and design a hybrid recommendation system.  
-The workflow mirrors a real-world analytics + ML pipeline, covering:
+- Title  
+- Content type (Movie / TV Show)  
+- Director and cast  
+- Country of production  
+- Date added to Netflix  
+- Release year  
+- Rating  
+- Duration  
+- Genre(s)  
+
+The dataset contains missing values and multi-valued categorical fields, reflecting real-world data complexity.
+
+---
+
+## Scope of Analysis
+The analysis includes:
 
 - Data cleaning and preprocessing  
+- Handling missing and inconsistent values  
+- Feature extraction from date and text columns  
 - Exploratory Data Analysis (EDA)  
-- SQL-style analytical reasoning  
-- Recommendation system design under realistic constraints  
+- Trend, distribution, and comparative analysis  
 
-The project demonstrates the ability to:
-- Understand raw business data  
-- Ask meaningful analytical questions  
-- Translate insights into product-relevant outcomes  
-- Design scalable and explainable recommendation logic  
+The analysis findings are later used to derive actionable recommendations.
 
 ---
 
-##  Problem Statement
+## Data Cleaning & Preprocessing
+Key preprocessing steps include:
 
-Amazon Prime Video hosts a large and diverse catalog of movies and TV shows across countries, genres, and time periods.
+- Converting date fields to datetime format  
+- Extracting year and month from the `date_added` column  
+- Handling missing values in categorical fields such as director and country  
+- Standardizing column data types  
+- Processing multi-value fields such as genres and countries for analysis  
 
-The objectives of this project are:
-- To analyze content trends and patterns on the platform  
-- To understand how Amazon Prime Video’s catalog has evolved over time  
-- To extract insights that could inform content strategy  
-- To design a recommendation system that accounts for real-world constraints such as cold start and scalability  
+These steps ensured data consistency and analytical reliability.
 
 ---
 
-##  Tools & Technologies Used
+## Exploratory Data Analysis (EDA)
 
-### Programming & Analysis
+### Content Distribution
+- Comparison of Movies vs TV Shows on the platform  
+- Growth in content additions over time  
+- Distribution of content by release year  
+
+### Geographic Analysis
+- Country-wise content production patterns  
+- Identification of regions with high content contribution  
+
+### Genre & Rating Analysis
+- Most prevalent genres on Netflix  
+- Rating distribution across Movies and TV Shows  
+- Duration patterns across different content types  
+
+### Time-Based Trends
+- Year-wise and month-wise trends in content addition  
+- Lag analysis between content release year and Netflix availability  
+
+All observations are supported using visualizations and summary statistics.
+
+---
+
+## Tools & Technologies
 - Python  
 - Pandas  
 - NumPy  
-
-### Visualization
 - Matplotlib  
 - Seaborn  
-
-### Machine Learning & NLP
-- TF-IDF Vectorization  
-- Cosine Similarity  
-- Latent Semantic Modeling (Truncated SVD)  
-- Hybrid Recommendation Systems  
+- Jupyter Notebook  
 
 ---
 
-##  Project Breakdown
+## Outcomes and Recommendations
+Based on the analysis, the following insights and recommendations were derived:
 
-### 1️ Data Cleaning & Preprocessing
+- Netflix has a significantly larger share of Movies compared to TV Shows, suggesting an opportunity to expand long-running and episodic content.
+- Content production is heavily concentrated in a few countries, indicating potential for diversification by investing in underrepresented regions.
+- Certain genres consistently dominate the platform, while niche genres remain less explored and could be targeted for audience expansion.
+- Recent years show a sharp increase in content additions, highlighting a shift toward aggressive content acquisition and production.
+- A noticeable delay exists between the content release year and platform addition for some titles, suggesting optimization opportunities in licensing and acquisition timelines.
 
-This was one of the most challenging phases of the project.
-
-- Decluttered and restructured nested data:
-  - Split multi-valued fields
-  - Reframed them using titles to preserve relevance
-  - Stacked and reindexed data
-  - Renamed columns and removed redundant index levels
-- Handled missing values in:
-  - `director`
-  - `cast`
-  - `country`
-- Converted date fields to `datetime`
-- Standardized duration formats
-- Ensured overall data consistency for downstream analysis and modeling
+These recommendations are grounded in observed historical patterns and platform trends.
 
 ---
 
-### 2️ Exploratory Data Analysis (EDA)
-
-Key analyses included:
-- Distribution of Movies vs TV Shows  
-- Growth of Amazon Prime Video content over time  
-- Country-wise content trends  
-- Genre-wise content trends  
-- Analysis of:
-  - Ratings
-  - Content duration  
-- Identification of dominant genres and release patterns  
-
-These insights reveal **platform-level trends** and provide signals relevant to Amazon Prime Video’s **content strategy**.
-
----
-
-### 3️ SQL-Style Analytical Queries
-
-The dataset was explored using SQL-style logic to answer business-driven questions such as:
-
-- Which genres dominate Amazon Prime Video’s catalog?
-- How has content addition changed year over year?
-- How does content distribution vary across regions?
-- How do ratings and duration differ by content type?
-
-This phase emphasizes **structured analytical thinking**, similar to real-world data analyst workflows.
-
----
-
-## 4 Final Phase: Recommendation System Design
-
-A **multi-layer recommendation system** was designed to reflect real-world constraints.
-
-###  Phase 1: Content-Based Recommendation
-- Used TF-IDF on metadata:
-  - Genre
-  - Description
-  - Cast
-  - Director
-- Computed item-to-item similarity using cosine similarity
-- Similarity was computed **on demand** to avoid O(n²) memory usage
-
-###  Phase 2: Latent Content Modeling
-- Applied Truncated SVD on TF-IDF vectors
-- Learned latent semantic representations of titles
-- Reduced noise and improved thematic similarity
-
-###  Phase 3: Weighted Hybrid Recommendation
-- Combined:
-  - Surface-level TF-IDF similarity
-  - Latent semantic similarity
-- Used a weighted hybrid approach to balance precision and robustness
-- Improved recommendation quality without relying on user interaction data
-
----
-
-##  Key Takeaways
-
-- Amazon Prime Video’s content strategy shows strong temporal, regional, and genre-driven patterns
-- Data cleaning and feature preservation are critical for reliable insights
-- Latent semantic modeling improves recommendation quality beyond keyword overlap
-- Hybrid recommendation systems outperform single-method approaches in practice
-- Thoughtful system design matters as much as model choice
-
----
-
-## Future Improvements
-
-- Incorporate true user–item interaction data for personalization
-- Add evaluation metrics such as:
-  - Precision@K
-  - Recall@K
-- Tune hybrid weights dynamically
-- Deploy the recommender as:
-  - A lightweight API
-  - A web-based demo application
-
----
-
-##  Conclusion
-
-This project demonstrates **end-to-end capability** across:
-- Data analysis
-- Business reasoning
-- Feature engineering
-- Recommendation system design
-
-It reflects real-world workflows where **data quality, interpretability, and system robustness** are just as important as algorithmic sophistication.
-
-  
+## Repository Structure
